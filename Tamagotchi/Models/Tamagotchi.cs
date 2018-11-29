@@ -20,7 +20,7 @@ namespace TamagotchiSpace.Models
     }
     public void Feed (int amount)
     {
-      _currentHunger+= amount*2;
+      _currentHunger+= amount*3;
       if (_currentHunger>_maxHunger)
       {
         _currentHunger=_maxHunger;
@@ -30,7 +30,7 @@ namespace TamagotchiSpace.Models
     }
     public void Rest (int amount)
     {
-      _currentEnergy+= amount*2;
+      _currentEnergy+= amount*3;
       if (_currentEnergy>_maxEnergy)
       {
         _currentEnergy=_maxEnergy;
@@ -40,7 +40,7 @@ namespace TamagotchiSpace.Models
     }
     public void Play (int amount)
     {
-      _currentAttention+= amount*2;
+      _currentAttention+= amount*3;
       if (_currentAttention>_maxAttention)
       {
         _currentAttention=_maxAttention;

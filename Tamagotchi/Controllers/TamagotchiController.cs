@@ -24,7 +24,6 @@ namespace TamagotchiSpace.Controllers
     public ActionResult Create(string name)
     {
       Tamagotchi mytamagotchi = new Tamagotchi(name);
-      // Tamagotchi.currentTamagotchi = mytamagotchi;
       return View("Index", mytamagotchi);
     }
 
