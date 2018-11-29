@@ -1,0 +1,102 @@
+@using TamagotchiSpace.Models;
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+    label{ text-align:center; display: block; }
+    button{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;}
+    </style>
+    <title>Main Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="name">@Model.GetName()</label>
+          </div>
+          <div class="col-md-3">
+            <label for="energy">Energy : @Model.GetCurrentEnergy()</label>
+          </div>
+          <div class="col-md-3">
+            <label for="hunger">Hunger : @Model.GetCurrentHunger()</label>
+          </div>
+          <div class="col-md-3">
+            <label for="attention">Attention : @Model.GetCurrentAttention()</label>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12">
+            <img id="pikachu" src="@Url.Content(Model.GetImageURL())" alt="happy">
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-3">
+            <label for="play">Play</label><br>
+            <form action="/tamagotchi/addattention" method="post">
+              <button type="submit" name="ball">Ball</button><br>
+              <input type="hidden" name="amount" value="2">
+            </form>
+            <form action="/tamagotchi/addattention" method="post">
+              <button type="submit" name="doll">Doll</button><br>
+              <input type="hidden" name="amount" value="5">
+            </form>
+            <form action="/tamagotchi/addattention" method="post">
+              <button type="submit" name="phone">Phone</button><br>
+              <input type="hidden" name="amount" value="10">
+            </form>
+          </div>
+          <div class="col-md-3">
+            <label for="food">Foods</label><br>
+            <form action="/tamagotchi/addfood" method="post">
+              <button type="submit" name="donut">Feed Donut</button><br>
+              <input type="hidden" name="amount" value="2">
+          </form>
+            <form action="/tamagotchi/addfood" method="post">
+              <button type="submit" name="chicken">Feed Chicken</button><br>
+              <input type="hidden" name="amount" value="5">
+          </form>
+            <form action="/tamagotchi/addfood" method="post">
+              <button type="submit" name="cake">Feed Cake</button><br>
+              <input type="hidden" name="amount" value="10">
+            </form>
+          </div>
+          <div class="col-md-3">
+            <label for="rest">Rest</label><br>
+            <form action="/tamagotchi/addrest" method="post">
+              <button type="submit" name="sit">Sit</button><br>
+              <input type="hidden" name="amount" value="2">
+            </form>
+            <form action="/tamagotchi/addrest" method="post">
+              <button type="submit" name="takeaNap">Take a Nap</button><br>
+              <input type="hidden" name="amount" value="5">
+            </form>
+            <form action="/tamagotchi/addrest" method="post">
+              <button type="submit" name="Sleep">Sleep</button><br>
+              <input type="hidden" name="amount" value="10">
+            </form>
+          </div>
+          <div class="col-md-3">
+            <form action="/tamagotchi/passtime" method="post">
+              <button type="submit" name="passTime">Pass 5 minute</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
